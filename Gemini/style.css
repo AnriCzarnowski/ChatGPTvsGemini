@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.dodawanie, .historia, .podsumowanie {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: left;
+}
+
+#tabelaHistorii tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.podsumowanie p {
+    margin-bottom: 5px;
+}
+
+/* Responsywność */
+
+@media (max-width: 600px) {
+    .dodawanie form, .historia table {
+        width: 100%;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zarządzanie finansami</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Zarządzanie finansami</h1>
+    <label for="income">Dochód:</label>
+    <input type="number" id="income" placeholder="Podaj swój dochód">
+
+    <button onclick="calculate()">Oblicz</button>
+
+    <div class="result" id="result" style="display: none;">
+        <p>Kwota po odjęciu 23% podatku: <span id="afterTax"></span></p>
+        <p>Średni dochód: <span id="averageIncome"></span></p>
+    </div>
+</div>
+
+<script>
+    function calculate() {
+        var income = parseFloat(document.getElementById('income').value);
+        var afterTax = income * (1 - 0.23);
+        var averageIncome = afterTax / 12; // załóżmy, że liczymy miesięczny średni dochód
+
+        document.getElementById('afterTax').textContent = afterTax.toFixed(2);
+        document.getElementById('averageIncome').textContent = averageIncome.toFixed(2);
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

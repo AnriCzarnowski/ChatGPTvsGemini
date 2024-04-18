@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menedżer Finansów</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Menedżer Finansów</h1>
+
+    <section class="dodawanie">
+        <h2>Dodaj dochód/wydatek</h2>
+        <form id="formularzDodawania">
+            <label for="kwota">Kwota:</label>
+            <input type="number" id="kwota" name="kwota" required>
+
+            <label for="typ">Typ:</label>
+            <select id="typ" name="typ" required>
+                <option value="dochód">Dochód</option>
+                <option value="wydatek">Wydatek</option>
+            </select>
+
+            <button type="submit">Dodaj</button>
+        </form>
+    </section>
+
+    <section class="historia">
+        <h2>Historia</h2>
+        <table id="tabelaHistorii">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Kwota</th>
+                    <th>Typ</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="podsumowanie">
+        <h2>Podsumowanie</h2>
+        <p>Suma dochodów: <span id="sumaDoch">0 zł</span></p>
+        <p>Suma wydatków: <span id="sumaWydatkow">0 zł</span></p>
+        <p>Bilans: <span id="bilans">0 zł</span></p>
+        <p>Podatek (23%): <span id="podatek">0 zł</span></p>
+        <p>Dochód netto: <span id="netto">0 zł</span></p>
+        <p>Średni dochód dzienny: <span id="sredniDzienny">0 zł</span></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
